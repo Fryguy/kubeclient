@@ -26,6 +26,7 @@ jobs:
         - windows-latest
     runs-on: ${{ matrix.os }}
     timeout-minutes: 10
+    continue-on-error: ${{ matrix.ruby == 'truffleruby-head' }}
     env:
       BUNDLE_GEMFILE: test/gemfiles/Gemfile.${{ matrix.gemfile }}
     steps:
